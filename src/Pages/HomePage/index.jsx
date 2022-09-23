@@ -7,7 +7,7 @@ const Home = () => {
     // const storedBalance = useSelector((state) => state.currBalance)
     // const dispatch = useDispatch()
 
-    const [inputBalance, setInputBalance] = useState(0)
+    const [inputBalance, setInputBalance] = useState()
     const [currentBalance, setCurrentBalance] = useState(parseInt(localStorage.getItem('currentBalance')) || 0)
 
     const handleChange = (event) => {
@@ -27,7 +27,8 @@ const Home = () => {
     }
 
     useEffect(() => {
-        localStorage.setItem('currentBalance', currentBalance)
+        localStorage.setItem('currentBalance', currentBalance);
+        
         // dispatch(updateBalance(12));
         // console.log(storedBalance);
     }, [currentBalance])
@@ -49,16 +50,17 @@ const Home = () => {
                         <input className="input"
                             placeholder="Enter Amount"
                             type="number"
-                            onChange={handleChange} />
+                            onChange={handleChange}
+                             />
                     </div>
 
                     <div className="buttons w-full">
                         <div className="actionButton flex justify-evenly w-full">
-                            <button onClick={credit} className="actionButtons w-1/4 bg-green-500">
+                            <button onClick={credit} disabled={inputBalance?false:true } className="actionButtons w-1/4 bg-green-500">
                                 Credit
                             </button>
 
-                            <button onClick={debit} className="actionButtons w-1/4 bg-red-500">
+                            <button onClick={debit} disabled={inputBalance?false:true } className="actionButtons w-1/4 bg-red-500">
                                 Debit
                             </button>
                         </div>
