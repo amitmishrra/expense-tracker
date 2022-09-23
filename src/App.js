@@ -1,12 +1,10 @@
 import Home from "./Pages/HomePage";
-import { BrowserRouter, Route, Routes, HashRouter } from "react-router-dom";
+import { Route, Routes, HashRouter } from "react-router-dom";
 import CommonContainer from "./CommonContainer";
-import store from './Store/Store'
-import {Provider} from "react-redux"
+import History from "./Pages/History";
 function App() {
   return (
     <>
-      <Provider store={store}>
         <HashRouter>
           <Routes>
             <Route path="/"
@@ -14,9 +12,12 @@ function App() {
                 <Home />
               </CommonContainer>} />
 
+              <Route path="/history"
+              element={<CommonContainer>
+                <History/>
+              </CommonContainer>} />
           </Routes>
         </HashRouter>
-      </Provider>
     </>
   );
 }
