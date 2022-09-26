@@ -46,9 +46,9 @@ const Home = () => {
 
     return (
         <>
-            <div className=" mt-12  w-[90%] md:w-1/2 m-auto h-[65vh] flex flex-col justify-center items-center">
-                <div className="currentBalance text-[25px] md:text-[35px]">
-                    Current Balance : ₹{currentBalance}
+            <div className="pt-44 w-[90%] md:w-1/2 m-auto h-[75vh] flex flex-col justify-center items-center font-class">
+                <div className="currentBalance text-[25px] text-white md:text-[35px]">
+                   Balance : ₹ {currentBalance}
                 </div>
                 <div className="homeContainer mt-12 w-full flex flex-col justify-around items-center h-full">
                     <div className="text-[25px] md:text-[30px] text-white">

@@ -10,12 +10,12 @@ export default function History() {
 
 
     return (
-        <div>
-            <div className='text-center  text-[30px] md:text-[40px]'>
+        <div className='pt-20 md:pt-24 history-page'>
+            <div id='headingText' className='text-center text-white  text-[30px] md:text-[40px] fixed w-full bg-[#12131f] py-4 z-[0]'>
                 Your Transactions
             </div>
 
-            <div className='w-[90%] md:w-1/2 m-auto mt-8 overflow-scroll'
+            <div className='w-[90%] md:w-1/2 m-auto mt-20 md:mt-24 z-[-1]'
             >
                 {
                     transactions ? 

@@ -16,7 +16,7 @@ export default function Header() {
     }
 
     return (
-        <div className="headWrapper">
+        <div className="headWrapper z-[1]">
             <div className="header">
                 <div className="logo">
                 ₹ExpenCy

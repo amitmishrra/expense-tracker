@@ -4,33 +4,42 @@ export default function Data({ props }) {
     let transactions = JSON.parse(localStorage.getItem("transactions"));
     const [data, setData] = useState([transactions])
     const credit = {
-        backgroundColor: "#4bb94b",
+        backgroundColor: "rgb(22 23 36)",
         borderColor: "#357235"
     }
 
     const debit = {
-        backgroundColor: "#d13d3d",
-        borderColor: "#581f1f"
+        backgroundColor: "rgb(22 23 36)",
+        borderColor: "#d13d3d"
     }
+
+    const creditText = {
+        color: "#357235"
+    }
+
+    const debitText = {
+        color: "#d13d3d"
+    }
+
     return (
         <div>
             {
                 data[0].map((data) => {
                     return (
-                        <div className='border-2 w-[100%] text-[17px] md:text-[22px] h-[45px] my-[15px] px-[20px] py-[40px] md:h-[60px] rounded-[10px] flex justify-between items-center text-white'
+                        <div className='border-2 w-[100%] text-[17px] md:text-[22px] h-[45px] my-[15px] px-[10px] py-[40px] font-class md:h-[60px] rounded-[10px] flex justify-between items-center text-white'
                             style={data.status == 'Credited' ? credit : debit}
                         >
-                            <div>
-                                ₹ {data.amount}
+                            <div  className='flex w-1/4 text-[23px] md:text-[28px]'>
+                                ₹{data.amount}
                             </div>
 
-                            <div>
+                            <div style={data.status == 'Credited' ? creditText : debitText} className='flex text-center justify-center items-center w-1/4'>
                                 {data.status}
                             </div>
 
                             <div>
                                 <div>
-                                    {data.time.slice(0, 16)}
+                                    {data.time.slice(4, 16)}
                                 </div>
                                 <div>
                                     {data.time.slice(15, 24)}

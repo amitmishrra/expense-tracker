@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
 
 body {
   margin: 0;
@@ -9,10 +11,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #55b4cc;
+  background-color: #12131f;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.font-class{
+  font-family: 'Comfortaa', cursive;
 }
