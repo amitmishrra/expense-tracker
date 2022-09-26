@@ -5,7 +5,7 @@ import History from "./Pages/History";
 import Chart from "./Pages/ChartPage";
 import Borrow from "./Pages/BorrowPage";
 import Login from "./Pages/LoginPage";
-
+let usersData = JSON.parse(localStorage.getItem("usersData"));
 function App() {
   return (
     <>
@@ -13,7 +13,11 @@ function App() {
           <Routes>
             <Route path="/"
               element={<CommonContainer>
-                <Home />
+               {
+                usersData ? 
+                <Home/> : 
+                <Login/>
+               }
               </CommonContainer>} />
 
               <Route path="/history"
@@ -29,11 +33,6 @@ function App() {
               <Route path="/borrow&lend"
               element={<CommonContainer>
               <Borrow/>
-              </CommonContainer>} />
-
-              <Route path="/login"
-              element={<CommonContainer>
-              <Login/>
               </CommonContainer>} />
           </Routes>
         </HashRouter>
