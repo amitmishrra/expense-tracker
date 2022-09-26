@@ -1,0 +1,22 @@
+.loginInputs{
+    background-color: rgba(174, 174, 174, 0);
+    border-bottom: 1px solid rgb(229, 229, 229);
+    width: 75%;
+    padding-left: 10px;
+    height: 40px;
+    font-size: 20px;
+    color: white;
+}
+
+.submitButton{
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    width: 110px;
+    color: white;
+    background: #000;
+}
+
+.loginContainer{
+    background-color: rgb(27, 28, 44);
+}

@@ -2,7 +2,7 @@ import "./Style.css"
 import { useEffect, useState } from "react";
 
 let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
-
+let usersData = JSON.parse(localStorage.getItem("usersData"));
 const Home = () => {
     const [inputBalance, setInputBalance] = useState()
     const [input, setInput] = useState()
@@ -44,9 +44,11 @@ const Home = () => {
         localStorage.setItem("transactions", JSON.stringify(transactions));
     }, [currentBalance])
 
+
+    
     return (
         <>
-            <div className="pt-44 w-[90%] md:w-1/2 m-auto h-[75vh] flex flex-col justify-center items-center font-class">
+            <div className="pt-44 w-[90%] md:w-1/2 m-auto h-[85vh] flex flex-col justify-center items-center font-class">
                 <div className="currentBalance text-[25px] text-white md:text-[35px]">
                    Balance : ₹ {currentBalance}
                 </div>

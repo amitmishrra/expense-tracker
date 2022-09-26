@@ -3,6 +3,9 @@ import { Route, Routes, HashRouter } from "react-router-dom";
 import CommonContainer from "./CommonContainer";
 import History from "./Pages/History";
 import Chart from "./Pages/ChartPage";
+import Borrow from "./Pages/BorrowPage";
+import Login from "./Pages/LoginPage";
+let usersData = JSON.parse(localStorage.getItem("usersData"));
 function App() {
   return (
     <>
@@ -10,7 +13,11 @@ function App() {
           <Routes>
             <Route path="/"
               element={<CommonContainer>
-                <Home />
+               {
+                usersData ? 
+                <Home/> : 
+                <Login/>
+               }
               </CommonContainer>} />
 
               <Route path="/history"
@@ -21,6 +28,11 @@ function App() {
               <Route path="/graph"
               element={<CommonContainer>
               <Chart/>
+              </CommonContainer>} />
+
+              <Route path="/borrow&lend"
+              element={<CommonContainer>
+              <Borrow/>
               </CommonContainer>} />
           </Routes>
         </HashRouter>
