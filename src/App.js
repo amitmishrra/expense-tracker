@@ -3,6 +3,9 @@ import { Route, Routes, HashRouter } from "react-router-dom";
 import CommonContainer from "./CommonContainer";
 import History from "./Pages/History";
 import Chart from "./Pages/ChartPage";
+import Borrow from "./Pages/BorrowPage";
+import Login from "./Pages/LoginPage";
+
 function App() {
   return (
     <>
@@ -21,6 +24,16 @@ function App() {
               <Route path="/graph"
               element={<CommonContainer>
               <Chart/>
+              </CommonContainer>} />
+
+              <Route path="/borrow&lend"
+              element={<CommonContainer>
+              <Borrow/>
+              </CommonContainer>} />
+
+              <Route path="/login"
+              element={<CommonContainer>
+              <Login/>
               </CommonContainer>} />
           </Routes>
         </HashRouter>

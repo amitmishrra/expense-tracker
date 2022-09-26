@@ -46,7 +46,7 @@ const Home = () => {
 
     return (
         <>
-            <div className="pt-44 w-[90%] md:w-1/2 m-auto h-[75vh] flex flex-col justify-center items-center font-class">
+            <div className="pt-44 w-[90%] md:w-1/2 m-auto h-[85vh] flex flex-col justify-center items-center font-class">
                 <div className="currentBalance text-[25px] text-white md:text-[35px]">
                    Balance : ₹ {currentBalance}
                 </div>
