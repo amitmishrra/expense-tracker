@@ -1,8 +1,13 @@
 import "./Style.css"
 import { useEffect, useState } from "react";
 
+
 let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 let usersData = JSON.parse(localStorage.getItem("usersData"));
+let chartData = JSON.parse(localStorage.getItem("chartData"))|| {
+    amount : [],
+    time : []
+};
 const Home = () => {
     const [inputBalance, setInputBalance] = useState()
     const [input, setInput] = useState()
@@ -22,6 +27,9 @@ const Home = () => {
             status : 'Credited',
             time : `${date}`
         });
+
+        chartData.amount.push(inputBalance);
+        chartData.time.push(`${date.toString().slice(15, 21)}`)
     }
 
     const debit = () => {
@@ -33,6 +41,8 @@ const Home = () => {
             status : 'Debited',
             time : `${date}`
         });
+
+      
     }
 
     const reset = () => {
@@ -40,8 +50,14 @@ const Home = () => {
     }
 
     useEffect(() => {
+        var date = new Date();
+        chartData.amount.push(currentBalance);
+        chartData.time.push(`${date.toString().slice(15, 21)}`)
+
         localStorage.setItem('currentBalance', currentBalance);
         localStorage.setItem("transactions", JSON.stringify(transactions));
+        localStorage.setItem("chartData", JSON.stringify(chartData));
+        console.log(chartData);
     }, [currentBalance])
 
 
@@ -85,6 +101,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
         </>
     )
 }

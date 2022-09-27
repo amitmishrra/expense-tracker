@@ -1,13 +1,10 @@
 import React from 'react'
 import { useState } from 'react';
 import Data from './Data';
-
+import Graph from "../ChartPage/Chart";
 
 export default function History() {
-    let transactions = JSON.parse(localStorage.getItem("transactions"));
-    const [data, setData] = useState([transactions])
-
-
+    let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 
     return (
         <div className='pt-20 md:pt-24 history-page'>
@@ -15,19 +12,31 @@ export default function History() {
                 Your Transactions
             </div>
 
-            <div className='w-[90%] md:w-1/2 m-auto mt-20 md:mt-24 z-[-1]'
-            >
-                {
-                    transactions ? 
-                    <Data/>
-                    : 
+            {
+                transactions.length ==0 ?
                    <>
-                    <div className='flex justify-center items-center text-white text-center text-[20px] md:text-[30px] '>
-                        No Transactions Yet
-                    </div>
+                        <div className='flex justify-center items-center text-white text-center mt-80 text-[20px] md:text-[30px] '>
+                            No Transactions Yet
+                        </div>
                     </>
-                }
-            </div>
+                    :
+                    <div className='flex flex-col md:flex-row w-full mt- md:mt-24'>
+                    <div className="mt-24 md:p-4 w-[95%] md:w-1/2 m-auto">
+                        <Graph />
+                    </div>
+                    <div className='w-[90%] md:w-1/2 m-auto mt-4  z-[-1]'>
+                        <div className="w-[90%] h-[70vh] m-auto">
+                            <Data />
+                        </div>
+                    </div>
+
+                </div>
+                  
+            }
+
+
+
+
 
         </div>
     )
