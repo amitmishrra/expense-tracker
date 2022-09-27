@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.borrowInput{
+    position: fixed;
+    left: 0;
+    top: 60px;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    width: 220%;
+    padding: 10px;
+}
+
+input::placeholder{
+    color: grey;
+}
+
+input{
+    padding: 4px 0;
+    width: 90%;
+    background: none;
+    border-bottom: solid 1px blue;
+    color: grey;
+    text-align: center;
+
+}
+
+.borrow{
+    background: green;
+    padding: 10px 50px;
+    margin: 0px 40px;
+    border-radius: 10px;
+}
+
+.lend{
+    background: red;
+    padding: 10px 50px;
+    margin: 0px 40px;
+    border-radius: 10px;
+}

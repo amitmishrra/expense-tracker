@@ -30,7 +30,7 @@ function App() {
               <Chart/>
               </CommonContainer>} />
 
-              <Route path="/borrow&lend"
+              <Route path="/borrow"
               element={<CommonContainer>
               <Borrow/>
               </CommonContainer>} />
