@@ -20,6 +20,7 @@ const Home = () => {
 
     const credit = () => {
         setCurrentBalance(currentBalance + inputBalance);
+        window.location.reload(false);
         setInput('')
         var date = new Date();
         transactions.unshift({
@@ -34,6 +35,7 @@ const Home = () => {
 
     const debit = () => {
         setCurrentBalance(currentBalance - inputBalance);
+        window.location.reload(false);
         setInput('')
         var date = new Date();
         transactions.unshift({
