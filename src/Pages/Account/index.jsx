@@ -1,17 +1,12 @@
 import './style.css'
-import Graph from "../ChartPage/Chart";
-import usersData from "../LoginPage"
+import Buttons from './buttons'
+import React, { useRef, useState } from 'react';
 
-let name = JSON.parse(localStorage.getItem("usersData.name"));
-let mail = JSON.parse(localStorage.getItem("usersData.mail"));
-let number = JSON.parse(localStorage.getItem("usersData.number"));
 
 const logout = () => {
     localStorage.clear();
     window.location.reload(false);
 }
-
-console.log(usersData.name);
 
 const Account = () => {
     return (
@@ -28,9 +23,11 @@ const Account = () => {
                         <img src="" alt="" />
                     </div>
                 </div>
-                <div className=" text-white flex flex-col items-center justify-around md:mt-[10vh] left-0 md:w-[50vw] md:h-[90vh] h-[92vh]  ">
+                <div className="  flex flex-col items-center justify-around md:mt-[18vh] left-0 md:w-[50vw] md:h-[80vh] h-[92vh]  ">
                     <img className="w-[400px] h-[400px] bg-white" src="https://upiqr.in/api/qr?name=Amit&vpa=mishra4amit4@ybl" alt="" />
-                    <h1 className=" text-3xl mb-8 ">example123@upi</h1>
+                    <p id="upi" className="upi text-white text-2xl " value="Example123@upi" >Example123@upi</p>
+
+                    <Buttons />
                 </div>
             </div>
         </>

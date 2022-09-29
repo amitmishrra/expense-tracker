@@ -27,7 +27,7 @@ export default function Header() {
                         <li onClick={navToggle}><NavLink to={'/'}>Home</NavLink></li>
                         <li onClick={navToggle}><NavLink to={'/history'}>History</NavLink></li>
                         <li onClick={navToggle}><NavLink to={'/borrow&lend'}>Borrow/lend</NavLink></li>
-                        <li onClick={navToggle} className=" md:visible invisible"><NavLink to={'/account'}>Account</NavLink></li>
+                        <li onClick={navToggle}><NavLink to={'/account'}>Account</NavLink></li>
                     </ul>
                 </div>
 
