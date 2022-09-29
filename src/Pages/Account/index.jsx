@@ -13,7 +13,7 @@ const Account = () => {
         <>
             <div className=" flex flex-col md:flex-row pt-26 w-[100vw] ">
                 <div className=" text-white flex flex-col justify-around md:mt-[10vh] mt-0 items-center right-0 md:w-[50vw] md:h-[90vh] h-[90vh]  ">
-                    <div className="accInfo text-2xl flex flex-col justify-around items-center md:mt-11 mt-[10vh] md:rounded-[20px] rounded-[20px] p-3 md:h-[86%] h-[70%] md:w-[30vw] w-[70%]  ">
+                    <div className="accInfo md:text-2xl text-xl flex flex-col justify-around items-center md:mt-11 mt-[10vh] md:rounded-[20px] rounded-[20px] p-3 md:h-[86%] h-[70%] md:w-[30vw] w-[70%]  ">
                         <img className=" rounded-[50%]  md:w-[180px] w-[150px] md:h-[180px] h-[150px] md:mt-8 mt-[5vh] bg-white" src="/" alt="" />
                         <p>Name </p>
                         <p>Email</p>
