@@ -4,6 +4,7 @@ import CommonContainer from "./CommonContainer";
 import History from "./Pages/History";
 import Borrow from "./Pages/BorrowPage";
 import Login from "./Pages/LoginPage";
+import Account from "./Pages/Account";
 let usersData = JSON.parse(localStorage.getItem("usersData"));
 function App() {
   return (
@@ -27,6 +28,11 @@ function App() {
               <Route path="/borrow&lend"
               element={<CommonContainer>
               <Borrow/>
+              </CommonContainer>} />
+
+              <Route path="/account"
+              element={<CommonContainer>
+              <Account/>
               </CommonContainer>} />
           </Routes>
         </HashRouter>
