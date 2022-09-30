@@ -1,5 +1,5 @@
 import './style.css'
-import Buttons from './Buttons'
+// import Buttons from './Buttons'
 import { useNavigate } from 'react-router-dom'
 let usersData = JSON.parse(localStorage.getItem("usersData")) || [{
     name : "name",
@@ -40,7 +40,7 @@ const Account = () => {
                     src={`https://upiqr.in/api/qr?name=${usersData[0].name.split(" ")}&vpa=${usersData[0].UPI}`} alt="" />
                     <p id="upi" className="upi text-white text-2xl " value="Example123@upi">{usersData[0].UPI}</p>
 
-                    <Buttons />
+                    {/* <Buttons /> */}
                 </div>
             </div>
         </>
