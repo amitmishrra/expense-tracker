@@ -12,13 +12,13 @@ function App() {
         <HashRouter>
           <Routes>
             <Route path="/"
-              element={<CommonContainer>
-               {
+              element={
+               
                 usersData ? 
-                <Home/> : 
+                <CommonContainer> <Home/>   </CommonContainer> : 
                 <Login/>
-               }
-              </CommonContainer>} />
+               
+            } />
 
               <Route path="/history"
               element={<CommonContainer>

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 
 let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
-let usersData = JSON.parse(localStorage.getItem("usersData"));
+// let usersData = JSON.parse(localStorage.getItem("usersData"));
 let chartData = JSON.parse(localStorage.getItem("chartData"))|| {
     amount : [],
     time : []
@@ -20,7 +20,6 @@ const Home = () => {
 
     const credit = () => {
         setCurrentBalance(currentBalance + inputBalance);
-        window.location.reload(false);
         setInput('')
         var date = new Date();
         transactions.unshift({
@@ -29,13 +28,12 @@ const Home = () => {
             time : `${date}`
         });
 
-        chartData.amount.push(inputBalance);
+        chartData.amount.push(currentBalance + inputBalance);
         chartData.time.push(`${date.toString().slice(15, 21)}`)
     }
 
     const debit = () => {
         setCurrentBalance(currentBalance - inputBalance);
-        window.location.reload(false);
         setInput('')
         var date = new Date();
         transactions.unshift({
@@ -44,7 +42,8 @@ const Home = () => {
             time : `${date}`
         });
 
-      
+        chartData.amount.push(currentBalance - inputBalance);
+        chartData.time.push(`${date.toString().slice(15, 21)}`)
     }
 
     const reset = () => {
@@ -52,10 +51,6 @@ const Home = () => {
     }
 
     useEffect(() => {
-        var date = new Date();
-        chartData.amount.push(currentBalance);
-        chartData.time.push(`${date.toString().slice(15, 21)}`)
-
         localStorage.setItem('currentBalance', currentBalance);
         localStorage.setItem("transactions", JSON.stringify(transactions));
         localStorage.setItem("chartData", JSON.stringify(chartData));
@@ -86,11 +81,11 @@ const Home = () => {
 
                     <div className="buttons w-full">
                         <div className="actionButton flex justify-evenly w-full">
-                            <button onClick={credit} disabled={inputBalance ? false : true} className="actionButtons w-1/4 bg-green-500">
+                            <button onClick={credit} disabled={input ? false : true} className="actionButtons w-1/4 bg-green-500">
                                 Credit
                             </button>
 
-                            <button onClick={debit} disabled={inputBalance ? false : true} className="actionButtons w-1/4 bg-red-500">
+                            <button onClick={debit} disabled={input ? false : true} className="actionButtons w-1/4 bg-red-500">
                                 Debit
                             </button>
                         </div>

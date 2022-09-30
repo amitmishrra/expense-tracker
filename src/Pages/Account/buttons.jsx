@@ -5,7 +5,16 @@ import { FacebookShareButton, FacebookIcon, WhatsappShareButton, WhatsappIcon, T
 
 const shareUrl = 'https://expency.netlify.app/#/'
 
+let usersData = JSON.parse(localStorage.getItem("usersData")) || [{
+    name : "name",
+    mail :"mail",
+    number : "number",
+    UPI : "UPI"
+}];
+
+
 const Buttons = () => {
+
     return (
         <>
             <div className=" text-white flex items-center md:w-[60%] w-[90%] md:px-0 px-5 justify-around ">
@@ -33,9 +42,9 @@ const Buttons = () => {
                 </div>
                 <div className="tooltip">
                     <button className="copy rounded-[10px] md:py-3 py-2 md:px-12 px-8  bg-blue-500 "
-                        onClick={() => navigator.clipboard.writeText(`Example123@upi`)}
+                        onClick={() => navigator.clipboard.writeText(`${usersData[0].UPI}`) }
                     >
-                        <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+                        <span className="tooltiptext" id="myTooltip">Copy to clipboard</span>
                         Copy
                     </button>
                 </div>

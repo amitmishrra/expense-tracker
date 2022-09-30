@@ -1,6 +1,5 @@
 import React from 'react'
 import "./style.css"
-import { useState } from 'react';
 import Data from './Data';
 import Graph from "../ChartPage/Chart";
 
@@ -25,7 +24,7 @@ export default function History() {
             </div>
 
             {
-                transactions.length == 0 ?
+                transactions.length === 0 ?
                     <>
                         <div className='flex justify-center items-center text-white text-center mt-80 text-[20px] md:text-[30px] '>
                             No Transactions Yet
@@ -35,13 +34,13 @@ export default function History() {
                     <div className='flex flex-col md:flex-row w-full mt- md:mt-24'>
                         <div className="mt-24 md:mt-2 md:p-4 w-[95%] md:w-1/2 m-auto  ">
                             <Graph />
-                            <div className="  md:mt-[57vh] md:w-[50%] w-[100%] md:fixed flex items-center justify-around text-white">
+                            <div className="  md:mt-[57vh] md:w-[50%] w-full mt-8 md:fixed flex items-center justify-around text-white">
                                 <button onClick={clear} className="flexButtons  h-12 w-1/4 bg-red-500">
                                     Clear all
                                 </button>
-                                {/* <button onClick={refresh} className="flexButtons h-12  w-1/4 bg-red-500">
+                                <button onClick={refresh} className="flexButtons h-12  w-1/4 bg-green-500">
                                     Refresh
-                                </button> */}
+                                </button>
                             </div>
                         </div>
                         <div className='w-[90%] md:w-1/2 m-auto mt-4   z-[-1]'>
