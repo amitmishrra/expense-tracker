@@ -18,3 +18,11 @@
     font-size: 20px;
     color: #9ca3af;
 }
+
+.cross {
+    filter: 
+    invert(50%) 
+    sepia(100%) 
+    hue-rotate(-50deg) 
+    saturate(10);
+}
